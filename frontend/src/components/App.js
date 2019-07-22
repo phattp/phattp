@@ -12,6 +12,10 @@ import Contact from "./Contact";
 
 // Define Global Style
 const GlobalStyle = createGlobalStyle`
+  html {
+    font-size: 62.5%;
+  }
+
   body {
     font-family: 'Open Sans', -apple-system, BlinkMacSystemFont,
                'avenir next', avenir,
@@ -20,8 +24,16 @@ const GlobalStyle = createGlobalStyle`
                roboto, noto,
                'segoe ui', arial,
                sans-serif;
-    color: ${props => props.theme.colorGrey1}
-    background-color: ${props => props.theme.colorBlack2}
+    font-size: ${props => props.theme.mSize}
+    color: ${props => props.theme.colorBlack}
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  button:disabled {
+    cursor: default;
   }
 `;
 

@@ -3,21 +3,26 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import { fetchProfile } from "../actions/profile";
 
-const Container = styled.div.attrs({
-  id: "intro",
-  className: "flex flex-column justify-center vh-100 w-80 pb5"
-})``;
+const Container = styled.div`
+  max-width: 110rem;
+  margin: 0 auto;
+  padding: 0 ${props => props.theme.mSize};
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
 
 const H1 = styled.h1`
-  font-size: 4.5rem;
+  font-size: 7rem;
   font-weight: 800;
   line-height: 1;
   margin: 0;
 `;
 
 const H2 = styled.h2`
-  color: ${props => props.theme.colorGrey2};
-  font-size: 3rem;
+  color: ${props => props.theme.colorDarkGrey};
+  font-size: ${props => props.theme.xlSize};
   font-weight: 800;
   line-height: 1;
   margin-top: 1rem;
@@ -25,40 +30,41 @@ const H2 = styled.h2`
 `;
 
 const H3 = styled.h3`
-  color: ${props => props.theme.colorBlue4}
-  font-size: 1.2rem;
+  color: ${props => props.theme.colorLightBlue};
+  font-size: 2rem;
   font-weight: 700;
   margin-left: 0.3rem;
 `;
 
 const P = styled.p`
-  font-size: 1.1rem;
+  font-size: ${props => props.theme.mSize};
   margin-left: 0.3rem;
   margin-bottom: 3rem;
   line-height: 1.5;
   width: 60%;
 `;
 
-const Button = styled.button`
+const Button = styled.a`
   align-self: flex-start;
+  cursor: pointer;
   border: none;
   border-radius: 4rem;
-  font-size: 1rem;
+  font-size: ${props => props.theme.mSize};
   font-weight: 700;
-  padding: 1rem 1.5rem;
-  cursor: pointer;
-  background-color: ${props => props.theme.colorBlue4};
-  color: ${props => props.theme.colorGrey1};
+  padding: 1.5rem 2rem;
+  background-color: ${props => props.theme.colorBlue};
+  color: ${props => props.theme.colorWhite};
   transition: background 250ms ease-in-out, transform 150ms ease;
   -webkit-appearance: none;
 
-  :hover,
-  :focus {
-    background-color: ${props => props.theme.colorBlue3};
+  :link,
+  :visited {
+    text-decoration: none;
   }
 
-  :focus {
-    outline: none;
+  :hover,
+  :active {
+    background-color: ${props => props.theme.colorDarkBlue};
   }
 
   :active {
@@ -92,9 +98,9 @@ class Profile extends Component {
 
   render() {
     return (
-      <Container>
+      <Container id="intro">
         {this.renderProfile()}
-        <Button>Get in Touch</Button>
+        <Button href="mailto:phatthara.pis@gmail.com">Get in Touch</Button>
       </Container>
     );
   }
