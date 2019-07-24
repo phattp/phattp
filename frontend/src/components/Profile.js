@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { fetchProfile } from "../actions/profile";
 
 const Container = styled.div`
-  max-width: 110rem;
+  max-width: 100rem;
   margin: 0 auto;
   padding: 0 ${props => props.theme.mSize};
   height: 90vh;
@@ -14,34 +14,50 @@ const Container = styled.div`
 `;
 
 const H1 = styled.h1`
-  font-size: 7rem;
+  font-size: 5.5rem;
   font-weight: 800;
   line-height: 1;
   margin: 0;
+
+  @media (min-width: ${props => props.theme.desktopBreakpoint}) {
+    font-size: 7rem;
+  }
 `;
 
 const H2 = styled.h2`
   color: ${props => props.theme.colorDarkGrey};
-  font-size: ${props => props.theme.xlSize};
+  font-size: ${props => props.theme.lSize};
   font-weight: 800;
   line-height: 1;
   margin-top: 1rem;
   margin-left: 0.1rem;
+
+  @media (min-width: ${props => props.theme.desktopBreakpoint}) {
+    font-size: ${props => props.theme.xlSize};
+  }
 `;
 
 const H3 = styled.h3`
   color: ${props => props.theme.colorLightBlue};
-  font-size: 2rem;
+  font-size: ${props => props.theme.mSize};
   font-weight: 700;
   margin-left: 0.3rem;
+
+  @media (min-width: ${props => props.theme.desktopBreakpoint}) {
+    font-size: 2rem;
+  }
 `;
 
 const P = styled.p`
   font-size: ${props => props.theme.mSize};
   margin-left: 0.3rem;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   line-height: 1.5;
-  width: 60%;
+  width: 80%;
+
+  @media (min-width: ${props => props.theme.desktopBreakpoint}) {
+    width: 60%;
+  }
 `;
 
 const Button = styled.a`
