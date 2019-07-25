@@ -2,7 +2,15 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 const BG = styled.div`
-  background: ${props => props.theme.colorGrey};
+  background-image: linear-gradient(
+      rgba(116, 125, 140, 0.3),
+      rgba(116, 125, 140, 0.3)
+    ),
+    url("https://images.unsplash.com/photo-1448932284983-0c7b152eba33?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 const Container = styled.div`

@@ -3,6 +3,18 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import { fetchProfile } from "../actions/profile";
 
+const BG = styled.div`
+  background-image: linear-gradient(
+      rgba(0, 116, 228, 1) 20%,
+      rgba(116, 219, 239, 0.5) 100%
+    ),
+    url("https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+`;
+
 const Container = styled.div`
   max-width: 100rem;
   margin: 0 auto;
@@ -14,6 +26,7 @@ const Container = styled.div`
 `;
 
 const H1 = styled.h1`
+  color: ${props => props.theme.colorWhite};
   font-size: 5.5rem;
   font-weight: 800;
   line-height: 1;
@@ -25,7 +38,7 @@ const H1 = styled.h1`
 `;
 
 const H2 = styled.h2`
-  color: ${props => props.theme.colorDarkGrey};
+  color: ${props => props.theme.colorWhite};
   font-size: ${props => props.theme.lSize};
   font-weight: 800;
   line-height: 1;
@@ -38,7 +51,7 @@ const H2 = styled.h2`
 `;
 
 const H3 = styled.h3`
-  color: ${props => props.theme.colorLightBlue};
+  color: ${props => props.theme.colorWhite};
   font-size: ${props => props.theme.mSize};
   font-weight: 700;
   margin-left: 0.3rem;
@@ -49,6 +62,7 @@ const H3 = styled.h3`
 `;
 
 const P = styled.p`
+  color: ${props => props.theme.colorWhite};
   font-size: ${props => props.theme.mSize};
   margin-left: 0.3rem;
   margin-bottom: 4rem;
@@ -65,11 +79,11 @@ const Button = styled.a`
   cursor: pointer;
   border: none;
   border-radius: 4rem;
+  font-family: "Roboto Mono", monospace;
   font-size: ${props => props.theme.mSize};
-  font-weight: 700;
   padding: 1.5rem 2rem;
-  background-color: ${props => props.theme.colorBlue};
-  color: ${props => props.theme.colorWhite};
+  background-color: ${props => props.theme.colorWhite};
+  color: ${props => props.theme.colorBlue};
   transition: background 250ms ease-in-out, transform 150ms ease;
   -webkit-appearance: none;
 
@@ -80,7 +94,7 @@ const Button = styled.a`
 
   :hover,
   :active {
-    background-color: ${props => props.theme.colorDarkBlue};
+    background-color: ${props => props.theme.colorGrey};
   }
 
   :active {
@@ -114,10 +128,12 @@ class Profile extends Component {
 
   render() {
     return (
-      <Container id="intro">
-        {this.renderProfile()}
-        <Button href="mailto:phatthara.pis@gmail.com">Get in Touch</Button>
-      </Container>
+      <BG id="intro">
+        <Container>
+          {this.renderProfile()}
+          <Button href="mailto:phatthara.pis@gmail.com">Get in Touch</Button>
+        </Container>
+      </BG>
     );
   }
 }

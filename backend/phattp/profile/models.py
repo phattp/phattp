@@ -7,7 +7,7 @@ class Profile(models.Model):
     email = models.EmailField(max_length=50)
     title = models.CharField(max_length=50)
     subtitle = models.CharField(max_length=50)
-    description = models.CharField(max_length=120)
+    description = models.TextField()
     about = models.TextField()
     skills = models.CharField(max_length=200)
     linkedin = models.URLField(max_length=50, blank=True)
